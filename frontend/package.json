@@ -27,6 +27,10 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
     "tailwindcss": "^4",
+<<<<<<< HEAD
     "typescript": "^5"
+=======
+    "typescript": "5.8.2"
+>>>>>>> c54a2c22cfb9540f0d6567702997e46ef48ed7c5
   }
 }
