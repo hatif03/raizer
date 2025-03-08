@@ -1,0 +1,1 @@
+Decentralized Micro-Investment Platform for Student Startups – Allows users to invest small amounts into student-led startups, leveraging blockchain to ensure fair distribution of profits.
