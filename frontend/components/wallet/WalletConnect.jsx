@@ -10,33 +10,24 @@ const WalletConnect = () => {
   const metamaskConnector = connectors.find((connector) => connector.name === 'MetaMask')
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex items-center">
       {account.status === 'connected' ? (
-        <>
-          <div className="text-lg font-semibold">Connected Account</div>
-          <div className="text-sm text-gray-400">{account.addresses[0]}</div>
-          <div className="text-sm text-gray-500">Chain ID: {account.chainId}</div>
-          <button
-            onClick={() => disconnect()}
-            className="mt-4 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-200"
-          >
-            Disconnect
-          </button>
-        </>
+        <button
+          onClick={() => disconnect()}
+          className="px-4 py-2 text-white bg-gray-800 rounded-lg text-sm hover:bg-gray-700 transition duration-200"
+        >
+          {account.addresses[0].slice(0, 6)}...{account.addresses[0].slice(-4)}
+        </button>
       ) : (
-        <>
-          <div className="text-lg font-semibold">Connect your Wallet</div>
-          <button
-            onClick={() => metamaskConnector && connect({ connector: metamaskConnector })}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
-          >
-            Connect MetaMask
-          </button>
-          {status && <div className="text-sm mt-2">{status}</div>}
-          {error?.message && <div className="text-sm text-red-500">{error.message}</div>}
-        </>
+        <button
+          onClick={() => metamaskConnector && connect({ connector: metamaskConnector })}
+          className="px-4 py-2 text-white bg-blue-600 rounded-lg text-sm hover:bg-blue-700 transition duration-200"
+        >
+          Connect Wallet
+        </button>
       )}
     </div>
+
   )
 }
 
